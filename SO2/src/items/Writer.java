@@ -18,15 +18,7 @@ public class Writer extends Thread implements Item {//Thread que realiza escrita
 	
 	@Override
 	public void run() {
-		for(int i = 0; i < 100; i++) { //Acessa 100 vezes o database
-			this.action(db);
-		}
-		try {
-			Thread.sleep(1); // 1ms
-		}
-		catch(InterruptedException e) {
-			e.printStackTrace();
-		}
+		this.action(db); //Executa a escrita
 	}
 	
 	public void setSolution(Solution slt) { //Altera a solução utilizada

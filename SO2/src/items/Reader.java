@@ -2,6 +2,7 @@ package items;
 
 import java.util.List;
 
+
 public class Reader extends Thread implements Item { //Thread que realiza leitura
 	private List<String> db; //Estrutura de palavras
 	private Solution slt; //Tipo de solução
@@ -17,15 +18,7 @@ public class Reader extends Thread implements Item { //Thread que realiza leitur
 	
 	@Override
 	public void run() {
-		for(int i = 0; i < 100; i++) { //Acessa 100 vezes o database
-			this.action(db);
-		}
-		try {
-			Thread.sleep(1); //1ms
-		}
-		catch(InterruptedException e) {
-			e.printStackTrace();
-		}
+		this.action(db); //Executa a leitura
 	}
 	
 	public void setSolution(Solution slt) { //Muda a solução utilizada
